@@ -1,5 +1,31 @@
-= simple_form_for @exam do |f|
-  = f.input :code, collection: Exam::CODES, prompt: false
-  = f.input :lng, collection: Exam::LNGS, prompt: false
-  = f.button :submit
+= simple_form_for @exam, remote: true do |f|
+  .row
+    .small-3.columns
+      = f.label :code, 'Exam type', class: 'inline'
+    .large-9.columns
+      = f.input :code, collection: Exam::CODES, prompt: false, label: false
+  .row
+    .small-3.columns
+      = f.label :lng, 'Language', class: 'inline'
+    .large-9.columns
+      = f.input :lng, collection: Exam::LANGUAGES, prompt: false, label: false
+  .row
+    .small-3.columns
+    .large-9.columns
+      = f.button :submit, 'Start the test', class: 'button'
+
+:javascript
+  $(document).ready(function(){
+
+    $('#new_exam')
+      .bind("ajax:beforeSend", function(evt, xhr, settings){
+        $('.overlay-container').show();
+      })
+
+      .bind("ajax:success", function(evt, data, status, xhr){
+        exam_id = data['id'];
+        window.location.href = '/exams/' + exam_id;
+      })
+
+  });
 

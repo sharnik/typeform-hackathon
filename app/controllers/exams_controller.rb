@@ -16,7 +16,7 @@ class ExamsController < ApplicationController
       @exam.url = cfs.url
       @exam.metadata = cfs.typeform_attributes
       @exam.save
-      redirect_to exam_path(@exam)
+      render json: @exam
     else
       render 'new'
     end
