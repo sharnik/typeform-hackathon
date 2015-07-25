@@ -12,6 +12,14 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 gem 'faraday'
+gem 'haml-rails', "~> 0.9"
+gem 'simple_form'
+gem 'rails_12factor', group: :production
+gem 'foundation-rails'
+gem 'unicorn'
+gem 'unicorn-rails'
+gem 'quiet_assets', group: :development
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -37,6 +45,7 @@ gem 'httparty'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-byebug'
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
