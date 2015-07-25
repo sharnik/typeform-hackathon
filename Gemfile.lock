@@ -117,6 +117,7 @@ GEM
     pry-byebug (3.2.0)
       byebug (~> 5.0)
       pry (~> 0.10)
+    puma (2.12.2)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -224,6 +225,7 @@ DEPENDENCIES
   jquery-rails
   pg
   pry-byebug
+  puma
   quiet_assets
   rails (= 4.2.1)
   rails_12factor
@@ -236,3 +238,6 @@ DEPENDENCIES
   unicorn
   unicorn-rails
   web-console (~> 2.0)
+
+BUNDLED WITH
+   1.10.6
