@@ -1,7 +1,10 @@
 class ExamsController < ApplicationController
 
+  respond_to :html, :json
+
   def show
     @exam = Exam.find(params[:id])
+    respond_with @exam
   end
 
   def new

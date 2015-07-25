@@ -35,6 +35,8 @@ gem 'httparty'
 gem 'cloudinary'
 gem 'puma'
 gem 'dotenv', :groups => [:development]
+
+gem 'responders', '~> 2.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
