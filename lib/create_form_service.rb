@@ -16,13 +16,17 @@ class CreateFormService
       faraday.adapter  Faraday.default_adapter  # make requests with Net::HTTP
     end
 
-    conn.post do |req|
+    res = conn.post do |req|
       req.url '/v0.3/forms'
       req.headers['Content-Type'] = 'application/json'
       req.headers['X-API-TOKEN'] = ENV['API_KEY']
 
       req.body = typeform_attributes.to_json
     end
+
+    json = JSON.parse(res.body)
+
+    json["links"].detect{|x| x["rel"] == "form_render" }["href"]
   end
 
   def typeform_attributes

@@ -1,0 +1,5 @@
+= simple_form_for @exam do |f|
+  = f.input :code, collection: Exam::CODES, prompt: false
+  = f.input :lng, collection: Exam::LNGS, prompt: false
+  = f.button :submit
+
