@@ -1,5 +1,3 @@
-require 'create_form_service'
-
 class ExamsController < ApplicationController
 
   def show

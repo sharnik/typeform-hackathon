@@ -40,7 +40,7 @@ class Parser
   end
 
   def raw
-    @raw ||= JSON.parse(raw_file)
+    @raw ||= JSON.parse(Scraper.get_exam.body)
   end
 
   def raw_file
