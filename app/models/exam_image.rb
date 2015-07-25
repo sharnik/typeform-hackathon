@@ -6,7 +6,7 @@ class ExamImage < ActiveRecord::Base
     return true if image
 
     image = new dgt_url: url
-    image.upload if Rails.env.production?
+    image.upload #if Rails.env.production?
     image.save
   end
 
