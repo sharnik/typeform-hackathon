@@ -32,7 +32,10 @@
 # DEMO TIME
 
 ---
+![original](images/next-steps.gif)
+# NEXT STEPS
+
+---
 ![original](images/questions.gif)
 # Questions?
 
----
