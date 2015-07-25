@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725120330) do
+ActiveRecord::Schema.define(version: 20150725134047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "exam_images", force: :cascade do |t|
     t.string "dgt_url"
-    t.string "imgur_url"
+    t.string "storage_url"
   end
 
   add_index "exam_images", ["dgt_url"], name: "index_exam_images_on_dgt_url", using: :btree
