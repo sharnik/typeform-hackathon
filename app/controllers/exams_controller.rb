@@ -10,8 +10,11 @@ class ExamsController < ApplicationController
 
   def create
     @exam = Exam.new(exam_params)
-    if @exam.valid? && url = CreateFormService.new.post
-      @exam.url = url
+    if @exam.save
+      cfs = CreateFormService.new(@exam.id)
+      cfs.post
+      @exam.url = cfs.url
+      @exam.metadata = cfs.typeform_attributes
       @exam.save
       redirect_to exam_path(@exam)
     else

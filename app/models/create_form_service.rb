@@ -4,9 +4,9 @@ class CreateFormService
 
   ENDPOINT = 'https://api.typeform.io'
 
-  def initialize
-    @typeform_hash = {}
-    @raw_hash = JSON.parse(json)
+  def initialize(exam_id)
+    @exam_id = exam_id
+    @body = {}
   end
 
   def post
@@ -24,24 +24,18 @@ class CreateFormService
       req.body = typeform_attributes.to_json
     end
 
-    json = JSON.parse(res.body)
+    @body = JSON.parse(res.body)
+  end
 
-    json["links"].detect{|x| x["rel"] == "form_render" }["href"]
+  def body
+    @body
+  end
+
+  def url
+    body["links"].detect{|x| x["rel"] == "form_render" }["href"]
   end
 
   def typeform_attributes
-    Parser.new.generator
-  end
-
-  def example
-    File.open('good_typeform.json').read
-  end
-
-  def prepare
-    @typeform_hash[:title] = "Examen tipo..."
-  end
-
-  def json
-    File.open('dgt.json').read
+    Parser.new(@exam_id).generator
   end
 end

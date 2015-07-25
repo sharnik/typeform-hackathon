@@ -1,12 +1,13 @@
 class Parser
-  def initialize
-    @filename = 'dgt.json'
+  def initialize(exam_id)
+    @exam_id = exam_id
   end
 
   def generator
     hash = {}
 
     hash[:title] = "Exam kind: #{code}"
+    hash[:webhook_submit_url] = "#{ENV['HOST']}/results/?exam_id=#{@exam_id}"
     hash[:fields] = []
     raw_questions.each do |r_question|
       t_question = {
@@ -16,7 +17,7 @@ class Parser
       }
 
       r_question["respuestas"].each do |r_label|
-        t_question[:choices] << {label: r_label["contenido"]}
+        t_question[:choices] << {label: r_label["contenido"], valid: r_label["correcta"]}
       end
 
       hash[:fields] << t_question
@@ -41,9 +42,5 @@ class Parser
 
   def raw
     @raw ||= JSON.parse(Scraper.get_exam.body)
-  end
-
-  def raw_file
-    @raw_file ||= File.open(@filename).read
   end
 end
