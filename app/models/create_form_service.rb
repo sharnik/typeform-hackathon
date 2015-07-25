@@ -7,6 +7,8 @@ class CreateFormService
   def initialize(exam_id)
     @exam_id = exam_id
     @body = {}
+
+    @typeform_attributes = Parser.new(@exam_id).generator
   end
 
   def post
@@ -36,6 +38,6 @@ class CreateFormService
   end
 
   def typeform_attributes
-    Parser.new(@exam_id).generator
+    @typeform_attributes
   end
 end

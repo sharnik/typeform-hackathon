@@ -13,8 +13,11 @@ class ExamsController < ApplicationController
     if @exam.save
       cfs = CreateFormService.new(@exam.id)
       cfs.post
+
       @exam.url = cfs.url
       @exam.metadata = cfs.typeform_attributes
+      @exam.typeform_data = cfs.body
+      @exam.magic!
       @exam.save
       redirect_to exam_path(@exam)
     else
