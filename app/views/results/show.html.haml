@@ -1,1 +1,3 @@
-%h1 #{@exam.correct_answers} correct answers!
+#results
+  %h1 #{@exam.correct_answers} correct answers!
+  = link_to 'new exam', new_exam_path, class: 'button'
