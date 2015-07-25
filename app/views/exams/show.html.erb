@@ -4,5 +4,5 @@
 
 
 <%= javascript_tag do %>
-
+  setInterval(function(){puller(<%= @exam.id %>)}, 2000);
 <% end %>
