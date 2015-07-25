@@ -1,0 +1,77 @@
+{
+  "title": "Sandbox - Example #1",
+  "design_id": 11,
+  "fields": [
+    {
+      "type": "statement",
+      "question": "Hi Joe. Thanks for purchasing a new **Toaster Fridge.**"
+    },
+    {
+      "type": "picture_choice",
+      "question": "What was the main factor for you when purchasing your **Toaster Fridge**?",
+      "labels": true,
+      "choices": [
+        {
+          "label": "Design",
+          "image_id": 28
+        },
+        {
+          "label": "Features",
+          "image_id": 29
+        },
+        {
+          "label": "Price",
+          "image_id": 30
+        }
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "question": "How often do you use your **Toaster Fridge**",
+      "choices": [
+        {
+          "label": "Daily"
+        },
+        {
+          "label": "Weekly"
+        },
+        {
+          "label": "Monthly"
+        },
+        {
+          "label": "I don't use it"
+        }
+      ]
+    },
+    {
+      "type": "rating",
+      "question": "How would you rate its overall quality?",
+      "shape": "star"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "If you like the **Toaster Fridge**, then you might also like...",
+      "description": "Select any which tickle your interest",
+      "choices": [
+        {
+          "label": "Oven Lawnmower"
+        },
+        {
+          "label": "Washer Microwave"
+        },
+        {
+          "label": "Grill foot Massager"
+        },
+        {
+          "label": "Television Hairdryer"
+        }
+      ]
+    },
+    {
+      "type": "opinion_scale",
+      "question": "How likely are you to recommend our products to a friend or colleague?",
+      "left_label": "Not at all likely",
+      "right_label": "Extremely likely"
+    }
+  ]
+}
