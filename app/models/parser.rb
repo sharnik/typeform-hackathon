@@ -18,7 +18,7 @@ class Parser
       }
 
       if img_url.present?
-        t_question[:description] = "![Image](#{img_url.gsub("http", "")})"
+        t_question[:description] = "![Image](#{img_url.gsub("http:", "")})"
       end
 
 
