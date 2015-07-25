@@ -19,7 +19,7 @@ class ExamsController < ApplicationController
       @exam.typeform_data = cfs.body
       @exam.magic!
       @exam.save
-      redirect_to exam_path(@exam)
+      render json: @exam
     else
       render 'new'
     end

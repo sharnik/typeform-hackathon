@@ -1,6 +1,8 @@
 class Exam < ActiveRecord::Base
-  CODES = %w{B LVA LCM A1 AM C D EC EB BTP BC CI CXI C7 BC-R}
-  LNGS = %w{1 2 3 4 5 6}
+  CODES = %w{B LVA LCM A1 AM C D EC EB BTP}
+  LANGUAGES = {'Castellano' => 1, 'Catalán' => 2, 'Valenciano' => 3,
+               'Gallego' => 4, 'Euskera' => 5, 'Alemán' => 6, 'Inglés' => 7,
+               'Francés' => 8}
 
   serialize :metadata, Hash
   serialize :answers, Array
@@ -35,3 +37,4 @@ class Exam < ActiveRecord::Base
     right
   end
 end
+
