@@ -1,5 +1,4 @@
 class ExamsController < ApplicationController
-
   respond_to :html, :json
 
   def show

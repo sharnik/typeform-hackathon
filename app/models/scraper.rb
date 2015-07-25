@@ -1,7 +1,7 @@
 class Scraper
   class << self
 
-    def get_exam
+    def get_exam(code = 'B', language = '1')
       session = set_session
       set_exam_data session
       questions = get_questions session
@@ -17,12 +17,12 @@ class Scraper
       response.headers['set-cookie'].split('; ').first
     end
 
-    def set_exam_data cookie
+    def set_exam_data cookie, code, language
       HTTParty.post 'https://sedeapl.dgt.gob.es/WEB_EXAM_AUTO/service/VerificarExamenServlet',
         headers: {
           'Cookie' => cookie,
         },
-        body: { tipoCuest: 'B', idioma: '1' }
+        body: { tipoCuest: code, idioma: language }
     end
 
     def get_questions session

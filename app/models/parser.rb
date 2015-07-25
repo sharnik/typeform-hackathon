@@ -1,6 +1,8 @@
 class Parser
-  def initialize(exam_id)
+  def initialize(exam_id, code = nil, language = nil)
     @exam_id = exam_id
+    @code = code
+    @language = language
   end
 
   def generator
@@ -47,6 +49,6 @@ class Parser
   end
 
   def raw
-    @raw ||= JSON.parse(Scraper.get_exam.body)
+    @raw ||= JSON.parse(Scraper.get_exam(@code, @language).body)
   end
 end
