@@ -16,6 +16,13 @@ ActiveRecord::Schema.define(version: 20150725120330) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "exam_images", force: :cascade do |t|
+    t.string "dgt_url"
+    t.string "imgur_url"
+  end
+
+  add_index "exam_images", ["dgt_url"], name: "index_exam_images_on_dgt_url", using: :btree
+
   create_table "exams", force: :cascade do |t|
     t.string   "code"
     t.string   "lng"

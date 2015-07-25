@@ -78,6 +78,8 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
+    imgur-api (0.0.4)
+      httparty
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -203,6 +205,7 @@ DEPENDENCIES
   foundation-rails
   haml-rails (~> 0.9)
   httparty
+  imgur-api
   jbuilder (~> 2.0)
   jquery-rails
   pg
