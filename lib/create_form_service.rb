@@ -1,9 +1,5 @@
-require 'json'
-require 'json/ext'
+require 'parser'
 
-require 'faraday'
-
-require './parser.rb'
 class CreateFormService
 
   ENDPOINT = 'https://api.typeform.io'

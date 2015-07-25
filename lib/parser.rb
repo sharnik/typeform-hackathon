@@ -1,5 +1,3 @@
-require 'json'
-
 class Parser
   def initialize
     @filename = 'dgt.json'
