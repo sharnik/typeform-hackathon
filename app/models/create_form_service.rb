@@ -4,11 +4,11 @@ class CreateFormService
 
   ENDPOINT = 'https://api.typeform.io'
 
-  def initialize(exam_id)
+  def initialize(exam_id, code, language)
     @exam_id = exam_id
     @body = {}
 
-    @typeform_attributes = Parser.new(@exam_id).generator
+    @typeform_attributes = Parser.new(@exam_id, code, language).generator
   end
 
   def post

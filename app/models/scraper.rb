@@ -3,7 +3,7 @@ class Scraper
 
     def get_exam(code = 'B', language = '1')
       session = set_session
-      set_exam_data session
+      set_exam_data session, code, language
       questions = get_questions session
 
       get_images questions
@@ -18,6 +18,8 @@ class Scraper
     end
 
     def set_exam_data cookie, code, language
+      p code
+      p language
       HTTParty.post 'https://sedeapl.dgt.gob.es/WEB_EXAM_AUTO/service/VerificarExamenServlet',
         headers: {
           'Cookie' => cookie,

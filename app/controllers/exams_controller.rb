@@ -13,7 +13,7 @@ class ExamsController < ApplicationController
   def create
     @exam = Exam.new(exam_params)
     if @exam.save
-      cfs = CreateFormService.new(@exam.id)
+      cfs = CreateFormService.new(@exam.id, @exam.code, @exam.lng)
       cfs.post
 
       @exam.url = cfs.url
