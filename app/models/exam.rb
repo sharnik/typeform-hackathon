@@ -22,7 +22,7 @@ class Exam < ActiveRecord::Base
   end
 
 
-  def correct_answers?
+  def correct_answers
     right = 0
     answers.each do |answer|
       answer_id = answer[:field_id].to_i
